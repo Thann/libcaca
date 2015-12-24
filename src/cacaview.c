@@ -144,16 +144,17 @@ int main(int argc, char **argv)
         {
             if(caca_get_event_type(&ev) & CACA_EVENT_MOUSE_PRESS)
             {
-                if(caca_get_event_mouse_button(&ev) == 1)
-                {
-                    if(items) current = (current + 1) % items;
-                    reload = 1;
-                }
-                if(caca_get_event_mouse_button(&ev) == 2)
-                {
-                    if(items) current = (items + current - 1) % items;
-                    reload = 1;
-                }
+                // thann
+                // if(caca_get_event_mouse_button(&ev) == 1)
+                // {
+                //     if(items) current = (current + 1) % items;
+                //     reload = 1;
+                // }
+                // if(caca_get_event_mouse_button(&ev) == 2)
+                // {
+                //     if(items) current = (items + current - 1) % items;
+                //     reload = 1;
+                // }
             }
             else if(caca_get_event_type(&ev) & CACA_EVENT_KEY_PRESS)
                 switch(caca_get_event_key_ch(&ev))
@@ -163,6 +164,7 @@ int main(int argc, char **argv)
                 if(items) current = (current + 1) % items;
                 reload = 1;
                 break;
+            case 'm':  // thann
             case 'p':
             case 'P':
                 if(items) current = (items + current - 1) % items;
@@ -224,6 +226,7 @@ int main(int argc, char **argv)
                 new_status = STATUS_DITHERING;
                 update = 1;
                 break;
+            case '=': // thann
             case '+':
                 update = 1;
                 set_zoom(zoom + 1);
